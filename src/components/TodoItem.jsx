@@ -1,7 +1,9 @@
+// this is child component
+// it will pass value to parent component
 import { MdDelete, MdEdit } from "react-icons/md";
 import { useRef, useState } from "react";
 
-const TodoItem = ({ todo, id, deleteTask, updateTask}) => {
+const TodoItem = ({ todo, id, deleteTask, updateTask }) => {
   const [title, setTitle] = useState(todo.title);
 
   // refer to dialog element
@@ -25,7 +27,7 @@ const TodoItem = ({ todo, id, deleteTask, updateTask}) => {
         date: todo.date,
       };
 
-      // pass id to check in .map
+      // pass id to updateTask() in Home.jsx check in .map
       updateTask(id, task);
     } else {
       // pass argument to deleteTask
@@ -35,7 +37,7 @@ const TodoItem = ({ todo, id, deleteTask, updateTask}) => {
   };
 
   const clickOutsideDialog = (e) => {
-    // dialog is entire screen exclude form
+    // dialog is entire screen // PS.exclude form
     if (e.target === dialog.current) {
       closeDialog();
     }

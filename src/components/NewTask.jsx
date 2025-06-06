@@ -1,4 +1,6 @@
-import { useState, useRef } from "react";
+// this is child component
+// it will pass value to parent component  
+import { useRef } from "react";
 
 // AddTask is not prop but it's a function pass to Home.jsx
 const NewTask = ({ addTask }) => {
@@ -6,7 +8,7 @@ const NewTask = ({ addTask }) => {
   
   // for input
   const title = useRef();
-  // for form
+  // access form element like a document.getElementBy
   const form = useRef();
 
   const submitForm = (e) => {

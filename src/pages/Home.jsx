@@ -1,8 +1,11 @@
+// this is parent component
+// it will change and store state of value 
 import TodoItem from "../components/TodoItem";
 import NewTask from "../components/NewTask";
 
 import { useState } from "react";
 
+// for loading graphic
 import Spinner from "../components/Spinner";
 
 // for noti
@@ -46,15 +49,15 @@ const Home = () => {
   };
 
   const updateTask = (id, task) => {
-    // map for change each todo in array
-    // which todo has index = id then change value to task
+    // .map for change each todo in array
+    // which todo that has index = id then change value to task
     setTodos((prevTodos) => prevTodos.map((todo, i) => (i === id ? task : todo)));
     toast.success("Successfully Updated!");
   };
 
   return (
     <>
-      {/* addTask is a name of prop // {addTask} is a function that pass to NewTask.jsx */}
+      {/* addTask is a name of props // {addTask} is a function in Home.jsx that pass to NewTask.jsx */}
       <NewTask addTask={addTask} />
 
       {loading ? (
@@ -68,6 +71,7 @@ const Home = () => {
               // pass deleteTask function to TodoItem.jsx
               <TodoItem
                 key={index}
+                // id is for refer to each element in array
                 id={index}
                 todo={todo}
                 deleteTask={deleteTask}
