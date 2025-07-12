@@ -27,7 +27,7 @@ const TodoItem = ({ todo, id, deleteTask, updateTask }) => {
         date: todo.date,
       };
 
-      // pass id to updateTask() in Home.jsx check in .map
+      // pass id to updateTask() from Home.jsx
       updateTask(id, task);
     } else {
       // pass argument to deleteTask
